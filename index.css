@@ -278,7 +278,66 @@ body, html {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .headcontent h1 {
+    font-size: 2.2rem;
+    margin: 40% auto 0;
+  }
 
+  .headcontent h2 {
+    margin-left: 0;
+    width: 90%;
+    font-size: 1.2rem;
+  }
+
+  .start p {
+    font-size: 1.2rem;
+    margin-top: 20%;
+    text-align: center;
+  }
+
+  .music {
+    width: 6vh;
+    height: 6vh;
+    top: 2vh;
+    right: 2vh;
+  }
+
+  .navigation {
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6vh;
+    height: 6vh;
+  }
+
+  .nav-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    margin-left: 0;
+  }
+
+  .nav-menu li {
+    padding: 10px;
+  }
+
+  .welcome {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
+
+  .headcontent {
+    padding: 5%;
+  }
+}
 
 
   

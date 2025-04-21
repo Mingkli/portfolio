@@ -45,6 +45,15 @@ function rotateNeedle(degrees) {
 }
 
 
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-menu');
+    const music = document.querySelector('.music');
+
+    nav.classList.toggle('show-menu');
+    music.classList.toggle('show-music');
+  }
+
+
 
 
 

@@ -16,7 +16,7 @@ body, html {
   }
 
 .head {
-    width: 100%;
+    width: 60%;
     height: 100%;
     top: 0;
     bottom: 0;
@@ -138,6 +138,7 @@ h2 {
 
 .music {
     margin-top: 8vh;
+    z-index: 1000;
     right: 3vh;
     background: url('./img/music.webp');
     background-size: cover;
@@ -287,6 +288,124 @@ h2 {
   display: block;
 }
 
+.menu-toggle {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 3vh;
+  right: 3vh;
+  width: 6vh;
+  height: 6vh;
+  z-index: 1100;
+  background-color: #E6B800;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #E6B800,
+              0 0 10px #E6B800,
+              0 0 30px #E6B800;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5vh;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: #1B1F3B;
+  border-radius: 1vh;
+  transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 1024px) {
+  
+  .cards {
+    flex-wrap: wrap;
+    gap: 5%;
+    margin-bottom: 10vh;
+  }
+
+  .card {
+    width: 20vh;
+    height: 30vh;
+  }
+
+  .headcontent h1 {
+    font-size: clamp(2rem, 5vw, 3em);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    margin-top: 4vh;
+    margin-bottom: 10vh; 
+  }
+
+  .card {
+    width: 20vh;
+    height: 30vh;
+  }
+
+  .headcontent h1 {
+    margin-left: 6vh;
+    margin-top: 15vh;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navigation,
+  .music,
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.show-menu,
+  .music.show-music {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 20vh;
+    height: 30vh;
+  }
+
+  .headcontent h1 {
+    margin-top: 5vh;
+    font-size: 1.5rem;
+    margin-left: 10vh;
+    padding: 0 5%;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navigation,
+  .music,
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.show-menu,
+  .music.show-music {
+    display: block;
+  }
+}
 
 
 
