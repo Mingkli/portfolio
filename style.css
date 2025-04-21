@@ -1,0 +1,432 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000022; 
+    background-image: url(./img/page.gif);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-behavior: smooth;
+  }
+
+/*The welcome page*/
+.welcome {
+
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/background.jpeg'); 
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: height 0.3s ease-out; 
+  position: relative; 
+}
+  
+.headcontent {
+  font-family: pf-venue-stencil, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  position: relative;
+  padding: 2%;
+  text-align: center;
+}
+  
+.headcontent h1 {
+  margin-top: 18%;
+  font-size: 4em; 
+  color: #ff00ff; 
+}
+
+/*The circle animation of the navigation bar*/
+
+.navigation {
+  position: fixed;
+  top: 2vh;
+  left: 5vh;
+  width: 100%;
+  height: 100%; 
+  z-index: 1000;
+  border-radius: 50%;
+  width: 8vh;
+  height: 8vh;
+  animation: animate 2s linear infinite;
+  box-shadow: 0 0 5px #ff00ff,
+  0 0 10px #ff00ff,
+  0 0 30px #ff00ff,
+  0 0 60px #ff00ff,
+  0 0 90px #ff00ff;
+}
+
+.navigation span {
+    position: absolute;
+    inset: 0;
+    animation: rotate 2s linear infinite;
+}
+  
+@keyframes rotate{
+  0%
+ {
+     transform: rotate(0deg);
+  }
+  100%
+   {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation span::before{
+  content: '';
+  position: absolute;
+  left: 8%;
+  width: 15%;
+  height: 15%;
+  background: var(--crl);
+  border-radius: 50%;
+  box-shadow: 0 0 5px var(--crl),
+  0 0 20px var(--crl),
+  0 0 40px var(--crl);
+}
+
+.headcontent h2 {
+  margin-top: 0;
+  float: right;
+  font-size: 1.5em; 
+  color: #04D98B;
+}
+
+p {
+  font-size: 4em; 
+  color: #ff00ff; 
+}
+
+/* Menu styles */
+.nav-menu {
+  justify-content: center;
+  align-items: center;
+  display: none; 
+  position: fixed; 
+  left: 8%; 
+  top: 10%; 
+  width: 150px; 
+  z-index: 1000; 
+  transition: transform 0.3s ease-in-out; 
+  border-radius: 5%;
+  box-shadow: 0 0 1px #ff00ff,
+  0 0 2px #ff00ff,
+  0 0 4px #ff00ff,
+  0 0 8px #ff00ff,
+  0 0 10px #ff00ff;
+}
+
+.show-menu {
+  display: block;
+}
+
+
+.nav-menu #cursor{
+  position: fixed;
+  z-index: 1000;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff00ff;
+  box-shadow: 0 0 5px #ff00ff,
+  0 0 10px #ff00ff,
+  0 0 30px #ff00ff,
+  0 0 60px #ff00ff,
+  0 0 90px #ff00ff;
+  transform: translate(-40%, -40%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.nav-menu:hover #cursor {
+  opacity: 1;
+}
+
+.nav-menu ul {
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  padding: 5%;
+}
+
+.nav-menu li a {
+  display:flex;
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+}
+
+.nav-menu li a:hover  {
+  text-decoration: none;
+  color: #ff00ff;
+  box-shadow: 0 0 5px #ff00ff,
+  0 0 10px #ff00ff,
+  0 0 30px #ff00ff,
+  0 0 60px #ff00ff,
+  0 0 90px #ff00ff;
+  border-radius: 10%;
+  display: block;
+}
+
+/* The animation when scroll */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The sections style */
+
+.section{
+  font-family: pilsner, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.divide {
+  background-image: url('./img/divide.gif');
+  width: 80%;
+  height: 40px;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.section p {
+  color: #ddd;
+  margin-bottom: 5%;
+  line-height: 150%;
+  font-size: 1.2rem;
+  width: 70%;
+  margin-left: 10%
+}
+
+.section h1 {
+  font-family: pf-venue-stencil, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  margin-bottom: 10%;
+  font-size: 3rem;
+  color: #ff00ff;
+  float: right;
+}
+
+.img-containerc {
+	width: 80%;
+	height: 700px;
+}
+
+.img-containerc ul {
+  left: 8%;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+/*The image player of 2c*/
+/*Reference: the code adapted from https://github.com/ayangweb/HTML-CSS-case/blob/master/36.焦点图切换/css/index.css*/
+.img-containerc ul li {
+	width: 20%;
+	cursor: pointer;
+}
+
+.img-containerc ul li img {
+	width: 100%;
+	border: 5px solid transparent;
+}
+
+.img-containerc ul .focus {
+	position: absolute;
+	top: 0;
+	left: 12%;
+	width: 80%;
+	height: 80%;
+	border: 5px solid transparent;
+  box-shadow: 0 0 1px #04D98B,
+  0 0 2px #04D98B,
+  0 0 4px #04D98B,
+  0 0 8px #04D98B,
+  0 0 10px #04D98B;
+	background: url(./img/2c\ -1.png) no-repeat;
+	background-size: contain;
+	transition: all 0.5s;
+}
+
+.img-containerc ul .select {
+	position: absolute;
+	left: 4%;
+	bottom: 1%;
+	width: 10.2%;
+	height: 0.5%;
+	border: 3px solid #04D98B;
+  box-shadow: 0 0 5px #04D98B,
+  0 0 10px #04D98B,
+  0 0 30px #04D98B,
+  0 0 60px #04D98B,
+  0 0 90px #04D98B;
+	pointer-events: none;
+	transition: all 0.8s;
+}
+
+.img-containerc ul li:nth-child(1):hover ~ .focus {
+	background-image: url(./img/2c\ -1.png);
+}
+.img-containerc ul li:nth-child(1):hover ~ .select {
+	left: 4%;
+}
+.img-containerc ul li:nth-child(2):hover ~ .focus {
+	background-image: url(./img/2c-2.png);
+}
+.img-containerc ul li:nth-child(2):hover ~ .select {
+	left: 14.7%;
+}
+.img-containerc ul li:nth-child(3):hover ~ .focus {
+	background-image: url(./img/2c-3.png);
+}
+.img-containerc ul li:nth-child(3):hover ~ .select {
+	left: 25.4%;
+}
+.img-containerc ul li:nth-child(4):hover ~ .focus {
+	background-image: url(./img/2c-4.png);
+}
+.img-containerc ul li:nth-child(4):hover ~ .select {
+	left: 36.1%;
+}
+.img-containerc ul li:nth-child(5):hover ~ .focus {
+	background-image: url(./img/2c-5.png);
+}
+.img-containerc ul li:nth-child(5):hover ~ .select {
+	left: 46.8%;
+}
+.img-containerc ul li:nth-child(6):hover ~ .focus {
+	background-image: url(./img/2c-6.png);
+}
+.img-containerc ul li:nth-child(6):hover ~ .select {
+	left: 57.5%;
+}
+.img-containerc ul li:nth-child(7):hover ~ .focus {
+	background-image: url(./img/2c-7.png);
+}
+.img-containerc ul li:nth-child(7):hover ~ .select {
+	left: 68.2%;
+}
+.img-containerc ul li:nth-child(8):hover ~ .focus {
+	background-image: url(./img/2c-8.png);
+}
+.img-containerc ul li:nth-child(8):hover ~ .select {
+	left: 78.9%;
+}
+.img-containerc ul li:nth-child(9):hover ~ .focus {
+	background-image: url(./img/2c-9.png);
+}
+.img-containerc ul li:nth-child(9):hover ~ .select {
+	left: 89.6%;
+}
+
+/*The image player of 2d*/
+.img-containerd {
+	width: 80%;
+	height: 700px;
+}
+.img-containerd ul {
+  left: 8%;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.img-containerd ul li {
+	width: 20%;
+	cursor: pointer;
+}
+
+.img-containerd ul li img {
+	width: 100%;
+	border: 5px solid transparent;
+}
+
+.img-containerd ul .focus {
+	position: absolute;
+	top: 0;
+	left: 12%;
+	width: 80%;
+	height: 80%;
+	border: 5px solid transparent;
+  box-shadow: 0 0 1px #ff00ff,
+  0 0 2px #ff00ff,
+  0 0 4px #ff00ff,
+  0 0 8px #ff00ff,
+  0 0 10px #ff00ff;
+	background: url(./img/2d-1.png) no-repeat;
+	background-size: contain;
+	transition: all 0.5s;
+}
+
+.img-containerd ul .select {
+	position: absolute;
+	left: 6.5%;
+	bottom: 1%;
+	width: 18.6%;
+	height: 0.5%;
+	border: 3px solid #ff00ff;
+  box-shadow: 0 0 5px #ff00ff,
+  0 0 10px #ff00ff,
+  0 0 30px #ff00ff,
+  0 0 60px #ff00ff,
+  0 0 90px #ff00ff;
+	pointer-events: none;
+	transition: all 0.8s;
+}
+
+.img-containerd ul li:nth-child(1):hover ~ .focus {
+	background-image: url(./img/2d-1.png);
+}
+.img-containerd ul li:nth-child(1):hover ~ .select {
+	left: 6.5%;
+}
+.img-containerd ul li:nth-child(2):hover ~ .focus {
+	background-image: url(./img/2d-2.png);
+}
+.img-containerd ul li:nth-child(2):hover ~ .select {
+	left: 30.6%;
+}
+.img-containerd ul li:nth-child(3):hover ~ .focus {
+	background-image: url(./img/2d-3.png);
+}
+.img-containerd ul li:nth-child(3):hover ~ .select {
+	left: 54.7%;
+}
+.img-containerd ul li:nth-child(4):hover ~ .focus {
+	background-image: url(./img/2d-4.png);
+}
+.img-containerd ul li:nth-child(4):hover ~ .select {
+	left: 78.8%;
+}
+
+
+  

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Landing Page</title>
+  <link rel="stylesheet" href="https://use.typekit.net/pya7cys.css">
+  <link rel="stylesheet" href="myProject.css">
+</head>
+<body>
+  <script src="script.js"></script>
+  <div class="head">
+    <div class="headcontent">
+        <div class="navigation" onclick="toggleNav()">
+            <span></span>
+        </div>
+        <div class="music" onclick="playmusic()">
+            <span></span>
+        </div>
+        <h1>Please choose a card to click</h1>
+    </div>
+  </div>
+  <div id="navMenu" class="nav-menu">
+    <ul>
+      <li><a href="#aboutMe">About Me</a></li>
+      <li><a href="#a">My Projects</a></li>
+      <li><a href="#b">Contact Me</a></li>
+      <div id="cursor"></div>
+    </ul>
+  </div>
+  <div class="cards">
+    <!-- About Me Card -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+              <h2>About Me</h2>
+            </div>
+            <a href="aboutMe.html">
+              <div class="card-back">
+                <p>Learn more about who I am and what I do.</p>
+              </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- My Project Card -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>My Projects</h2>
+            </div>
+            <a href="projects.html">
+              <div class="card-back">             
+                <p>Explore my projects and creative works.</p>
+              </div>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

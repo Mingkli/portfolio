@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divided Wheel Navigation</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pya7cys.css">
+    <link rel="stylesheet" href="embedded.css">
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <div class="head">
+      <div class="headcontent">
+          <div class="navigation" onclick="toggleNav()">
+              <span></span>
+          </div>
+          <div class="music" onclick="playmusic()">
+              <span></span>
+          </div>
+          <h1>Please click a project name</h1>
+      </div>
+    </div>
+    <div id="navMenu" class="nav-menu">
+      <ul>
+        <li><a href="#aboutMe">About Me</a></li>
+        <li><a href="#a">My Projects</a></li>
+        <li><a href="#b">Contact Me</a></li>
+        <div id="cursor"></div>
+      </ul>
+    </div>
+
+    <div class="wheel-container" onmouseleave="rotateNeedle(0)">
+      <div class="needle" id="needle"></div>
+      <a href="./crystalBall.html" class="segment-selector crystalball" onmouseover="rotateNeedle(-30)">
+        <h3>Crystal Ball</h3>
+      </a>
+      <a href="./socialRing.html" class="segment-selector socialring" onmouseover="rotateNeedle(30)">
+        <h3>Social Ring</h3>
+      </a>
+      <a href="./aqualumina.html" class="segment-selector aquallumina" onmouseover="rotateNeedle(180)">
+        <h3>Aquallumina</h3>
+      </a>
+    </div>
+</body>
+</html>

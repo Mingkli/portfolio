@@ -1,0 +1,362 @@
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #1B1F3B; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-behavior: smooth;
+    background-size: cover;
+    background-blend-mode: multiply;
+    font-family: john-doe, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #0C0C1A;
+}
+
+/* Updates for needle and segment selectors */
+.needle {
+    position: absolute;
+    width: 4px; /* Slightly thicker */
+    height: 40vh; /* Adjust based on your wheel size */
+    background-color: #E6B800;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    transition: transform 0.8s ease-in-out;
+    z-index: 10;
+    box-shadow: 0 0 10px #E6B800;
+}
+
+.segment-selector:hover {
+    box-shadow: 0 0 15px #FFD700, 0 0 30px #FFD700;
+}
+
+/* Adjusting the wheel container to ensure segments are properly positioned */
+.wheel-container {
+    position: relative;
+    background-image: url(./img/wheel.png);
+    background-size: cover;
+    align-items: center;
+    width: 80vh;
+    height: 80vh;
+    margin-left: 27%;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures segments don't extend beyond wheel */
+}
+
+/* Base styling for segments */
+.segment-selector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    /* This creates a single 120° pie slice */
+    clip-path: polygon(
+        55% 45%,                  /* center */
+        100% 0%,                  /* right top */
+        0% 0%                     /* left top */
+    );
+}
+
+/* Now rotate the same wedge to make three slices */
+.segment-1 {
+    transform: rotate(315deg);
+    background-color: rgba(0, 137, 123, 0.4);
+}
+.segment-2 {
+    transform: rotate(180deg);
+    background-color: rgba(255, 200, 0, 0.4);
+}
+.segment-3 {
+    transform: rotate(300deg);
+    background-color: rgba(200, 0, 200, 0.4);
+}
+
+
+/* Hover effects for segments */
+.segment-selector:hover {
+    box-shadow: 0 0 20px #E6B800, 0 0 40px #E6B800;
+    filter: brightness(1.2);
+    z-index: 10;
+    opacity: 1;
+}
+
+/* Optional: Add segment labels */
+.segment-label {
+    position: absolute;
+    color: #E6B800;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.segment-1 .segment-label {
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.segment-2 .segment-label {
+    top: 50%;
+    right: 25%;
+    transform: translateY(-50%);
+}
+
+.segment-3 .segment-label {
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+}
+
+.segment-selector:hover .segment-label {
+    opacity: 1;
+}
+
+/* Needle styling */
+.needle {
+    position: absolute;
+    width: 4px;
+    height: 40vh;
+    background-color: #E6B800;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    transition: transform 0.8s ease-in-out;
+    z-index: 15;
+    box-shadow: 0 0 10px #E6B800;
+    pointer-events: none;
+}
+
+/* Custom overlay to match your wheel design */
+.segment-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.segment-selector:hover .segment-overlay {
+    opacity: 1;
+}
+.head {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: height 0.3s ease-out; 
+    position: relative; 
+}
+  
+.headcontent {
+    position: relative;
+}
+  
+.headcontent h1 {
+    margin-left: 3%;
+    font-size: 3em;
+    color: #F5ECE0;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: .1em;
+    animation: typing 3s steps(40, end);
+    display: inline-block;
+    max-width: fit-content;
+}
+  
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.move {
+    text-decoration: none;
+    color: inherit;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rotate{
+    0%
+   {
+       transform: rotate(0deg);
+    }
+    100%
+     {
+      transform: rotate(360deg);
+    }
+}
+
+.music {
+    cursor: pointer;
+    margin-top: 8vh;
+    right: 3vh;
+    background: url('./img/music.webp');
+    background-size: cover;
+    border-radius: 50%;
+    position: fixed;
+    float: right;
+    width: 8vh;
+    height: 8vh;
+    box-shadow: 0 0 5px #E6B800,
+    0 0 10px #E6B800,
+    0 0 30px #E6B800,
+    0 0 60px #E6B800,
+    0 0 90px #E6B800;
+    animation: rotate 5s linear infinite;
+}
+
+/*The circle animation of the navigation bar*/
+
+.navigation {
+    cursor: pointer;
+    position: absolute;
+    color: #C0C0C0;
+  margin-top: 4vh;
+  margin-left: 82%;
+  width: 100%;
+  height: 100%; 
+  z-index: 1000;
+  border-radius: 50%;
+  width: 8vh;
+  height: 8vh;
+  animation: animate 2s linear infinite;
+  box-shadow: 0 0 5px #00897B,
+  0 0 10px #00897B,
+  0 0 30px #00897B,
+  0 0 60px #00897B,
+  0 0 90px #00897B;
+}
+
+.navigation span {
+    position: absolute;
+    inset: 0;
+    animation: rotate 5s linear infinite;
+}
+
+.navigation span::before{
+  content: '';
+  position: absolute;
+  left: 8%;
+  width: 30%;
+  height: 30%;
+  background: #E6B800;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #E6B800,
+  0 0 20px #E6B800,
+  0 0 40px #E6B800;
+  clip-path: polygon(
+    50% 0%, 
+    61% 35%, 
+    98% 35%, 
+    68% 57%, 
+    79% 91%, 
+    50% 70%, 
+    21% 91%, 
+    32% 57%, 
+    2% 35%, 
+    39% 35%
+  );
+}
+
+/* Menu styles */
+.nav-menu {
+    margin-left: 64.5%;
+    margin-top: 5vh;
+    position: absolute;
+    cursor: none;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: fixed;
+    left: 8%;
+    width: 150px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5%;
+    box-shadow: 0 0 1px #C0C0C0,
+                0 0 2px #C0C0C0,
+                0 0 4px #C0C0C0,
+                0 0 8px #C0C0C0,
+                0 0 10px #C0C0C0;
+}
+
+.show-menu {
+  display: block;
+}
+
+
+.nav-menu #cursor{
+  position: fixed;
+  z-index: 1000;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E6B800;
+  box-shadow: 0 0 5px #E6B800,
+  0 0 10px #E6B800,
+  0 0 30px #E6B800,
+  0 0 60px #E6B800,
+  0 0 90px #E6B800;
+  transform: translate(-40%, -40%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.nav-menu:hover #cursor {
+  opacity: 1;
+}
+
+.nav-menu ul {
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  padding: 5%;
+}
+
+.nav-menu li a {
+    cursor: none;
+    /* Your existing properties */
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+  }
+
+.nav-menu li a:hover  {
+  text-decoration: none;
+  color: #E6B800;
+  box-shadow: 0 0 5px #E6B800,
+  0 0 10px #E6B800,
+  0 0 30px #E6B800,
+  0 0 60px #E6B800,
+  0 0 90px #E6B800;
+  border-radius: 10%;
+  display: block;
+}
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystical Wheel Navigation</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pya7cys.css">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="head">
+        <div class="headcontent">
+            <div class="navigation" onclick="toggleNav()">
+                <span></span>
+            </div>
+            <div class="music" onclick="playmusic()">
+                <span></span>
+            </div>
+            <h1>Please choose a card to click</h1>
+        </div>
+    </div>
+    
+    <div id="navMenu" class="nav-menu">
+        <ul>
+            <li><a href="#aboutMe">About Me</a></li>
+            <li><a href="#a">My Projects</a></li>
+            <li><a href="#b">Contact Me</a></li>
+            <div id="cursor"></div>
+        </ul>
+    </div>
+    
+    <div class="wheel-container">
+        <div class="needle" id="needle"></div>
+        
+        <!-- Crystal Ball Segment -->
+        <div class="segment-selector segment-1" data-angle="0">
+            <div class="segment-label">Crystal Ball</div>
+        </div>
+        
+        <!-- Moon Segment -->
+        <div class="segment-selector segment-2" data-angle="30">
+            <div class="segment-label">Moon</div>
+        </div>
+        
+        <!-- Waves Segment -->
+        <div class="segment-selector segment-3" data-angle="120">
+            <div class="segment-label">Waves</div>
+        </div>
+    </div>
+
+    <script>
+        // Wait until DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to toggle navigation menu
+            window.toggleNav = function() {
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.toggle('show-menu');
+            };
+
+            // Function to play music
+            window.playmusic = function() {
+                console.log('Music playing');
+                // Add your music playing logic here
+            };
+
+            // Get needle element
+            const needle = document.getElementById('needle');
+            
+            // Make sure the needle is properly positioned at start
+            if (needle) {
+                needle.style.transform = 'rotate(0deg)';
+            }
+            
+            // Get all segment selectors
+            const segmentSelectors = document.querySelectorAll('.segment-selector');
+            
+            // Add event listeners to each segment
+            segmentSelectors.forEach(segment => {
+                segment.addEventListener('mouseenter', function() {
+                    // Get the angle from the data attribute
+                    const angle = parseInt(this.getAttribute('data-angle'));
+                    
+                    // Move the needle to point to this segment
+                    if (needle) {
+                        needle.style.transform = `rotate(${angle}deg)`;
+                    }
+                });
+                
+                segment.addEventListener('click', function() {
+                    const angle = parseInt(this.getAttribute('data-angle'));
+                    
+                    // Move needle and perhaps trigger some action
+                    if (needle) {
+                        needle.style.transform = `rotate(${angle}deg)`;
+                    }
+                    
+                    // You can add navigation or other actions here
+                    console.log(`Segment clicked: ${angle}`);
+                });
+            });
+
+            // Custom cursor for nav-menu
+            const cursor = document.getElementById('cursor');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (cursor && navMenu) {
+                navMenu.addEventListener('mousemove', function(e) {
+                    const rect = navMenu.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    cursor.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
