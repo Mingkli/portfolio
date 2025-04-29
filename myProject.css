@@ -332,17 +332,18 @@ h2 {
   
   .cards {
     flex-wrap: wrap;
-    gap: 5%;
-    margin-bottom: 10vh;
+    gap: 10%;
+    margin-bottom: 15vh;
   }
 
   .card {
-    width: 20vh;
-    height: 30vh;
+    width: 35vh;
+    height: 60vh;
   }
 
   .headcontent h1 {
-    font-size: clamp(2rem, 5vw, 3em);
+    margin-top: 5vh;
+    font-size: clamp(2rem, 5vw, 2em);
   }
 }
 
@@ -360,8 +361,12 @@ h2 {
     height: 30vh;
   }
 
+  .card-back p {
+    font-size: 0.7rem;
+  }
+
   .headcontent h1 {
-    margin-left: 2vh;
+    margin-left: 1.2vh;
     margin-top: 5vh;
     font-size: 1.5rem;
   }
@@ -382,21 +387,31 @@ h2 {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) {
+
+  .cards {
+    margin-bottom: 20vh;
+  }
+
   .card {
+    gap: 5%;
     width: 15vh;
     height: 25vh;
   }
 
+  .card-back p {
+    font-size: 0.7rem;
+  }
+
   .headcontent h1 {
-    margin-top: 5vh;
-    font-size: 1rem;
-    margin-left: 10vh;
+    margin-top: 10vh;
+    font-size: 1.1rem;
+    margin-left: 2vh;
     padding: 0 5%;
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .menu-toggle {
