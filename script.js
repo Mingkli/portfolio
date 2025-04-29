@@ -36,7 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-
+//The behavior of cards on different devices 
+document.addEventListener('DOMContentLoaded', function () {
+  // Check if it's a mobile device
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    const cards = document.querySelectorAll('.card-link');
+    cards.forEach(card => {
+      card.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent immediate navigation
+        if (!card.classList.contains('mobile-flip')) {
+          // First tap flips
+          card.classList.add('mobile-flip');
+        } else {
+          // Second tap follows the link
+          window.location.href = card.getAttribute('href');
+        }
+      });
+    });
+  }
+});
 
 // Rotate needle on hover
 function rotateNeedle(degrees) {
