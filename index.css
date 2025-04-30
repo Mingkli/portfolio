@@ -34,7 +34,8 @@ body, html {
 }
   
 .headcontent h1 {
-    font-size: 4em;
+    font-size: clamp(2rem, 6vw, 4em);
+    margin: 25vh auto 0;
     color: #F5ECE0;
     overflow: hidden;
     white-space: nowrap;
@@ -279,63 +280,65 @@ body, html {
 }
 
 @media (max-width: 768px) {
+
   .headcontent h1 {
-    font-size: 2.2rem;
-    margin: 40% auto 0;
+    animation: typing 4s steps(40, end);
+    margin-right: 4vh;
+    font-size: 0.5rem;
+  }
+  
+  .headcontent h2 {
+    animation-delay: 2.8s; 
   }
 
-  .headcontent h2 {
-    margin-left: 0;
-    width: 90%;
-    font-size: 1.2rem;
+  .music, .navigation {
+      width: 6vh;
+      height: 6vh;
   }
 
   .start p {
-    font-size: 1.2rem;
-    margin-top: 20%;
-    text-align: center;
-  }
-
-  .music {
-    width: 6vh;
-    height: 6vh;
-    top: 2vh;
-    right: 2vh;
-  }
-
-  .navigation {
-    margin-left: auto;
-    margin-right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6vh;
-    height: 6vh;
+    animation-delay: 3s, 4s; 
   }
 
   .nav-menu {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    margin-left: 0;
+      width: 200px;
   }
 
   .nav-menu li {
-    padding: 10px;
-  }
-
-  .welcome {
-    background-position: center;
-    background-size: cover;
+      padding: 8px;
   }
 }
 
+/* MOBILE: UP TO 480PX */
 @media (max-width: 480px) {
-  body {
-    flex-direction: column;
+
+  .headcontent h1 {
+    animation: typing 4s steps(40, end);
+    margin-left: 2vh;
+    margin-top: 35vh;
+    margin-bottom: 2vh;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
-  .headcontent {
-    padding: 5%;
+  .headcontent h2 {
+    animation-delay: 2.8s; 
+    font-size: 1rem;
+    margin-bottom: 10vh;
+  }
+
+  .start p {
+      font-size: 1rem;
+      animation-delay: 3s, 4s; 
+  }
+
+  .music, .navigation {
+      width: 5vh;
+      height: 5vh;
+  }
+
+  .nav-menu {
+      width: 150px;
   }
 }
 
