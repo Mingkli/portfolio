@@ -282,7 +282,6 @@ h2 {
 @media (max-width: 768px) {
 
   .headcontent h1 {
-    background-color: #C0C0C0;
     margin-left: 2vh;
     margin-top: 5vh;
     margin-bottom: 1%;
@@ -290,7 +289,6 @@ h2 {
   }
 
   .headcontent h2 {
-    background-color: #00897B;
     margin-top: 0;
     width: 30%;
     font-weight: 700;

@@ -135,7 +135,7 @@ body, html {
 .moonone {
     text-decoration: none;
     color: inherit;
-    margin-top: 40vh;
+    margin-top: 0;
     background-size: cover;
     width: 10vh;
     height: 10vh;
@@ -388,6 +388,78 @@ body, html {
   0 0 90px #E6B800;
   border-radius: 10%;
   display: block;
+}
+
+@media (max-width: 1024px) {
+
+    .head h1 {
+        margin-top: 15%;
+        font-size: 1.5rem;
+    }
+
+    .elements {
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    .elements h2 {
+        font-size: 0.8rem;
+    }
+
+    .starone, .startwo, .starthree,
+    .moonone, .moontwo {
+        width: 15%;
+        height: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .head h1 {
+        margin-top: 15%;
+        font-size: 1.5rem;
+    }
+
+    .elements {
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    .elements h2 {
+        font-size: 0.8rem;
+    }
+
+    .starone, .startwo, .starthree,
+    .moonone, .moontwo {
+        width: 15%;
+        height: 15%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .head h1 {
+        margin-top: 15%;
+        font-size: 1.5rem;
+    }
+
+    .elements {
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    .elements h2 {
+        font-size: 0.8rem;
+    }
+
+    .starone, .startwo, .starthree,
+    .moonone, .moontwo {
+        width: 15%;
+        height: 15%;
+    }
 }
 
 
