@@ -106,7 +106,7 @@ body {
   
 .headcontent h1 {
     margin-left: 3%;
-    font-size: 3em;
+    font-size: 3rem;
     color: #F5ECE0;
     overflow: hidden;
     white-space: nowrap;
@@ -323,5 +323,142 @@ body {
   0 0 90px #E6B800;
   border-radius: 10%;
   display: block;
+}
+
+@media (max-width: 1024px) {
+
+  .wheel-container {
+    align-items: center;
+    margin-left: 20vw;
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .segment-selector {
+    height: 5vh;
+    border-radius: 20%;
+    font-size: 0.8rem;
+  }
+
+  .crystalball {
+    left: 20%;
+  }
+
+  .headcontent {
+    margin-top: 5vh;
+    margin-left: 2vh;
+  }
+
+  .headcontent h1 {
+    font-size: 1.7rem;
+  }
+
+  .needle {
+    width: 2.4vh;
+    height: 7.5vh;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .wheel-container {
+    margin-top: 10%;
+    margin-left: 11.3%;
+    width: 60vh;
+    height: 60vh;
+  }
+
+  .segment-selector {
+    height: 5vh;
+    border-radius: 20%;
+    font-size: 1.1rem;
+  }
+
+  .crystalball {
+    left: 22%;
+  }
+
+  .needle {
+    width: 2.4vh;
+    height: 7.5vh;
+  }
+
+  .headcontent {
+    margin-top: 8%;
+    margin-left: 2vh;
+  }
+
+  .headcontent h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 736px) {
+
+  .wheel-container {
+    width: 40vw;
+    height: 40vw;
+    margin-top: 2.5%;
+    margin-left: 28%;
+  }
+
+  .segment-selector {
+    height: 5vh;
+    border-radius: 20%;
+    font-size: 0.5rem;
+  }
+
+  .crystalball {
+    left: 20%;
+  }
+
+  .needle {
+    width: 2.4vh;
+    height: 7.5vh;
+  }
+
+  .headcontent {
+    margin-top: 2%;
+    margin-bottom: 0;
+    margin-left: 2vh;
+  }
+
+  .headcontent h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .wheel-container {
+    width: 90vw;
+    height: 90vw;
+    margin-top: 18%;
+    margin-left: 5%;
+  }
+
+  .segment-selector {
+    height: 5vh;
+    border-radius: 20%;
+    font-size: 0.6rem;
+  }
+
+  .crystalball {
+    left: 20%;
+  }
+
+  .needle {
+    width: 2.4vh;
+    height: 7.5vh;
+  }
+
+  .headcontent {
+    margin-top: 10%;
+    margin-left: 2vh;
+  }
+
+  .headcontent h1 {
+    font-size: 1rem;
+  }
 }
 
