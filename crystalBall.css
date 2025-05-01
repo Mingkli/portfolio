@@ -362,6 +362,46 @@ h2 {
       width: 80%;
     }
   }
+  
+  @media (max-width: 480px) {
+    
+    .headcontent h1 {
+      margin-left: 2vh;
+      margin-top: 5vh;
+      font-size: clamp(2rem, 5vw, 2em);
+    }
+  
+    .headcontent h2 {
+      width: 30%;
+      font-weight: 700;
+      margin-left: 10%;
+    }
+  
+    .photo {
+      margin-right: 10%;
+      margin-top: 50%;
+      width: 20vh;
+      height: 20vh;
+    }
+  
+    .headcontent p {
+      margin-left: 10%;
+      width: 80%;
+    }
+
+    .design h3 {
+      margin-left: 10vw;
+    }
+
+    .design p {
+      margin-left: 13vw;
+    }
+
+    .audience li {
+      margin-left: 15vw;
+      margin-bottom: 3vw;
+    }
+  }
 
 
 
