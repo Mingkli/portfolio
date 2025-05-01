@@ -279,16 +279,18 @@ body, html {
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
 
   .headcontent h1 {
-    animation: typing 4s steps(40, end);
-    margin-right: 4vh;
-    font-size: 0.5rem;
+    margin-top: 53vw;
+    animation: typing 5s steps(40, end);
+    margin-left: 5vw;
+    font-size: 1.5rem;
   }
   
   .headcontent h2 {
-    animation-delay: 2.8s; 
+    animation-delay: 1.5s; 
+    font-size: 1rem;
   }
 
   .music, .navigation {
@@ -297,7 +299,8 @@ body, html {
   }
 
   .start p {
-    animation-delay: 3s, 4s; 
+    font-size: 0.9rem;
+    animation-delay: 2s, 3s; 
   }
 
   .nav-menu {
@@ -306,6 +309,72 @@ body, html {
 
   .nav-menu li {
       padding: 8px;
+  }
+}
+
+@media (max-width: 736px) {
+
+  .headcontent h1 {
+    animation: typing 5s steps(40, end);
+    margin-right: 4vw;
+    margin-top: 20vw;
+    font-size: 0.5rem;
+  }
+  
+  .headcontent h2 {
+    animation-delay: 1s; 
+    font-size: 0.9rem;
+  }
+
+  .music, .navigation {
+      width: 6vh;
+      height: 6vh;
+  }
+
+  .start p {
+    font-size: 0.8rem;
+    animation-delay: 2s, 3s; 
+  }
+
+  .nav-menu {
+      width: 200px;
+  }
+
+  .nav-menu li {
+      padding: 8px;
+  }
+}
+
+
+@media (max-width: 694px) {
+
+  .headcontent h1 {
+    animation: typing 4s steps(40, end);
+    margin-left: 2vh;
+    margin-top: 35vh;
+    margin-bottom: 2vh;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .headcontent h2 {
+    animation-delay: 2.8s; 
+    font-size: 1rem;
+    margin-bottom: 10vh;
+  }
+
+  .start p {
+      font-size: 1rem;
+      animation-delay: 3s, 4s; 
+  }
+
+  .music, .navigation {
+      width: 5vh;
+      height: 5vh;
+  }
+
+  .nav-menu {
+      width: 150px;
   }
 }
 
